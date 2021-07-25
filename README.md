@@ -1,10 +1,17 @@
 # fishconLC
+
+![image](https://user-images.githubusercontent.com/1620953/126903606-7388236b-1886-4949-999b-d94ad566ea13.png)
+
 Fisheye to equirectangular converter written in RealBasic/XOJO
 
 This is an experimental program (or if you prefer, a pre-alpha release), so use it at your own risk.
 
 This program takes as input 1 or 2 images in fisheye/square/circular format and reproject them into equirectangular projection.
 
+![Fisheye](https://github.com/jumpjack/fishconLC/blob/main/001-mini.jpg)
+
+![Equirect](https://github.com/jumpjack/fishconLC/blob/main/001-pano1.jpg)
+          
 A "fisheye/square/circular" is an image with same width and height, containing the circular image representing the field of fiew of a fisheye lens.
 
 FishconLC  relies on an external program called "FFMPEG", and makes use of its V360 filter to perform all calculations, being as a matter of fact just an interface to produce the needed parameters to use FFMPEG to convert from fisheye to equirectangular, using this command:
