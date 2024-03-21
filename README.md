@@ -16,10 +16,13 @@ A "fisheye/square/circular" is an image with same width and height, containing t
 
 FishconLC  relies on an external program called "FFMPEG", and makes use of its V360 filter to perform all calculations, being as a matter of fact just an interface to produce the needed parameters to use FFMPEG to convert from fisheye to equirectangular, using this command:
 
-    ffmpeg -i input.jpg -y output.jpg -vf v360=fisheye:equirectangular:h_fov=235:i_fov=235:yaw=0:pitch=90:roll=0
+    ffmpeg -i input.jpg -y output.jpg -vf v360=fisheye:equirectangular:ih_fov=235:iv_fov=235:yaw=0:pitch=90:roll=0
 
  - h_fov and i_fov define the horizontal and vertical FOV of thew fisheye image;
  - yow, pitch and roll define the orientation of the camera
 
+For double fisheye input (only horizontal) just change "fisheye" to "fisheye".
 
+Experiment here:
 
+https://ffmpeg.lav.io/
