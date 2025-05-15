@@ -26,3 +26,11 @@ For double fisheye input (only horizontal) just change "fisheye" to "fisheye".
 Experiment here:
 
 https://ffmpeg.lav.io/
+
+
+# Installation
+
+- Download thw whole repo and unpack the zip file.
+- Find the folder Builds\Fisheye2Equi.xml\Windows\Fisheye2Equi
+- Copy [ffmpeg.exe](https://www.ffmpeg.org/) executable in the folder
+- Launch Fisheye2Equi.exe executable
