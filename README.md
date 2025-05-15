@@ -19,9 +19,9 @@ FishconLC  relies on an external program called "FFMPEG", and makes use of its V
     ffmpeg -i input.jpg -y output.jpg -vf v360=fisheye:equirectangular:ih_fov=235:iv_fov=235:yaw=0:pitch=90:roll=0
 
  - h_fov and i_fov define the horizontal and vertical FOV of thew fisheye image;
- - yow, pitch and roll define the orientation of the camera
+ - yaw, pitch and roll define the orientation of the camera
 
-For double fisheye input (only horizontal) just change "fisheye" to "fisheye".
+For double fisheye input (only horizontal) just change "fisheye" to "dfisheye".
 
 Experiment here:
 
@@ -34,3 +34,20 @@ https://ffmpeg.lav.io/
 - Find the folder Builds\Fisheye2Equi.xml\Windows\Fisheye2Equi
 - Copy [ffmpeg.exe](https://www.ffmpeg.org/) executable in the folder
 - Launch Fisheye2Equi.exe executable
+
+# Viewing results
+
+Once you get an equirectangular image, you can view it as a spherical panorama using one of these sites:
+- [https://renderstuff.com/tools/360-panorama-web-viewer/](https://renderstuff.com/tools/360-panorama-web-viewer/)
+- [https://akokubo.github.io/ThetaViewer/demo2.html](https://akokubo.github.io/ThetaViewer/demo2.html)
+
+# Further resources
+- [My blog page about 360° photos, panoramas, fisheye,...](https://jumpjack.wordpress.com/2021/07/03/foto-3d-a-180-o-360-vr180-o-vr360/)
+
+# Examples
+
+Commandline for converting horizontal doble fisheye to equirectangular full sphere: 
+
+- ffmpeg -i input.jpg -vf v360=dfisheye:e:ih_fov=210:iv_fov=210:pitch=5 -y output.jpg
+
+Above command assumes the FOV of the two images is 210° horizontally and vertically, and that the camera was slightly pointing dowupn (5°) while taking the shot.
